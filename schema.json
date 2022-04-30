@@ -2,11 +2,11 @@
   "scene": "taojimu",
   "cloudSchema": {
     "submit": {
-      "handler": "",
+      "handler": "schemaSubmit",
       "functionName": "savedata"
     },
     "initial": {
-      "handler": "",
+      "handler": "schemaInit",
       "functionName": "instance"
     },
     "cloudType": "serverless",
