@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "**/package-lock.json": true
+  },
+  "less.compile": {
+    "compress": false,
+    "sourceMap": false,
+    "out": false
+  }
+}

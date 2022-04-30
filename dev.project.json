@@ -1,0 +1,5 @@
+{
+  "distDir": "./build",
+  "beforePreview": "npm run start",
+  "beforeUpload": "npm run build"
+}

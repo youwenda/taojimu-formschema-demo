@@ -1,0 +1,57 @@
+{
+  "name": "taojimu-formschema-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env PREVIEW=1 craco-cli build",
+    "build": "craco-cli build",
+    "prepare": "husky install",
+    "lint": "eslint --cache --ext .js ./"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write .",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "tnpm": {
+    "mode": "yarn"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/eslint-parser": "^7.17.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "craco-cli": "^3.0.1-alpha.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^7.0.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "@taojimu/meta-view": "^0.0.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}

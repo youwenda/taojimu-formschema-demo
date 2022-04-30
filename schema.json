@@ -1,0 +1,251 @@
+{
+  "scene": "taojimu",
+  "cloudSchema": {
+    "submit": {
+      "handler": "",
+      "functionName": "savedata"
+    },
+    "initial": {
+      "handler": "",
+      "functionName": "instance"
+    },
+    "cloudType": "serverless",
+    "env": "online"
+  },
+  "authorizeSchema": {
+    "needAuthorize": true
+  },
+  "jsonSchema": {
+    "type": "object",
+    "properties": {
+      "webapp": {
+        "widget": "TaobaowpCustomForm",
+        "properties": {
+          "overviewPic": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "图片地址",
+                "format": "uri"
+              },
+              "type": {
+                "type": "string",
+                "title": "图片来源",
+                "const": "library"
+              },
+              "extension": {
+                "type": "string",
+                "title": "图片格式"
+              },
+              "width": {
+                "type": "number",
+                "title": "图片宽度，单位px"
+              },
+              "height": {
+                "type": "number",
+                "title": "图片高度，单位px"
+              }
+            },
+            "required": [
+              "src",
+              "extension",
+              "width",
+              "height"
+            ],
+            "title": "图片选择",
+            "ex-taojimu": {
+              "key": "overviewPic",
+              "type": "image",
+              "required": true,
+              "extension": {
+                "recdimension": "750x0",
+                "recformat": "jpg",
+                "recsize": 0.5,
+                "check": {}
+              }
+            }
+          },
+          "question": {
+            "type": "object",
+            "properties": {
+              "words": {
+                "type": "string",
+                "maxLength": 400
+              },
+              "fontid": {
+                "type": "integer",
+                "const": -1
+              }
+            },
+            "title": "问题",
+            "ex-taojimu": {
+              "key": "question",
+              "type": "textarea",
+              "required": true,
+              "extension": {
+                "maxLength": 400
+              }
+            }
+          },
+          "rightChoice": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "正确答案",
+            "ex-taojimu": {
+              "key": "rightChoice",
+              "type": "text",
+              "required": true,
+              "extension": {
+                "maxLength": 10
+              }
+            }
+          },
+          "errorChoice": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "错误答案",
+            "ex-taojimu": {
+              "key": "errorChoice",
+              "type": "text",
+              "required": true,
+              "extension": {
+                "maxLength": 10
+              }
+            }
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 1,
+            "maxItems": 1,
+            "title": "宝贝选择",
+            "ex-taojimu": {
+              "key": "items",
+              "type": "item_change",
+              "required": false,
+              "extension": {
+                "prefetch": true
+              },
+              "min": 1,
+              "max": 1,
+              "api": "goods"
+            }
+          },
+          "itemsPrefetchData": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "auction_id": {
+                  "type": "string",
+                  "title": "宝贝id",
+                  "pattern": "^\\d+$"
+                },
+                "spBiz30day": {
+                  "type": "string",
+                  "title": "月销",
+                  "pattern": "^\\d+$"
+                },
+                "totalSold": {
+                  "type": "string",
+                  "title": "总销",
+                  "pattern": "^\\d+$"
+                },
+                "preSellType": {
+                  "type": "number",
+                  "title": "定金类型"
+                },
+                "itemTitle": {
+                  "type": "string",
+                  "title": "宝贝标题"
+                },
+                "promoMBasePrice": {
+                  "type": "string",
+                  "title": "宝贝原价"
+                },
+                "pictUrl": {
+                  "type": "string",
+                  "format": "uri",
+                  "title": "宝贝主图"
+                },
+                "icQuantityDesc": {
+                  "type": "string",
+                  "title": "库存描述"
+                },
+                "preSellPrice": {
+                  "type": "string",
+                  "title": "预售价格"
+                },
+                "promoMPrice": {
+                  "type": "string",
+                  "title": "折扣价"
+                },
+                "price": {
+                  "type": "string",
+                  "title": "最终价格"
+                }
+              },
+              "required": [
+                "auction_id",
+                "pictUrl",
+                "itemTitle",
+                "price"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 1,
+            "title": "宝贝选择"
+          },
+          "link": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "type": {
+                "type": "string",
+                "title": "链接类型",
+                "enum": [
+                  "goods",
+                  "coupons",
+                  "input"
+                ]
+              },
+              "quicklink": {
+                "type": "string",
+                "title": "快捷类型",
+                "enum": [
+                  "",
+                  "wang",
+                  "home",
+                  "all",
+                  "weitao"
+                ]
+              },
+              "link": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "title": "跳转链接",
+            "ex-taojimu": {
+              "key": "link",
+              "type": "link",
+              "required": true
+            }
+          }
+        },
+        "required": [
+          "overviewPic",
+          "question",
+          "rightChoice",
+          "errorChoice",
+          "link"
+        ]
+      }
+    }
+  }
+}

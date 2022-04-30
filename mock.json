@@ -1,0 +1,42 @@
+{
+  "apiMockData": [
+    {
+      "apiName": "getModuleData",
+      "returnValue": {
+        "webapp": {
+          "question": {
+            "words": "图中的商品有几大特性?"
+          },
+          "errorChoice": "8",
+          "overviewPic": {
+            "src": "https://img.alicdn.com/imgextra/i2/2247603103/O1CN01pwjVAt1YnDk4IuF0G_!!2247603103-0-alimamacc.jpg",
+            "type": "library",
+            "extension": "jpg",
+            "width": 800,
+            "height": 800,
+            "compress": false,
+            "groupId": 114289183
+          },
+          "items": [673202337949],
+          "link": {
+            "type": "input",
+            "link": "https://shop.m.taobao.com/shop/shop_index.htm?shop_id=undefined",
+            "quicklink": "home"
+          },
+          "rightChoice": "7",
+          "itemsPrefetchData": [
+            {
+              "auction_id": 673202337949,
+              "totalSold": 0,
+              "pictUrl": "//img.alicdn.com/imgextra/i2/2/O1CN01MIeBlE1YnDkGl8AWt_!!2-item_pic.png",
+              "promoMBasePrice": "10.00",
+              "promoMPrice": "10.00",
+              "price": "10.00",
+              "itemTitle": "测试爱肉肉2请不要拍"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
