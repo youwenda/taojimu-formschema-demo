@@ -5,13 +5,20 @@
 ### 如何使用
 
 ```shell
-# clone 项目到本地一个新的文件夹，比如 new-project 文件夹
-git clone git@github.com:youwenda/taojimu-formschema-demo.git new-project
+# npm 国内用户可设置淘宝镜像
+npm config set registry https://registry.npmmirror.com
+npm install @taojimu/meta-view -S
 
-cd new-project
-rm -rf .git
-tnpm ii
+# yarn
+yarn add @taojimu/meta-view -S
 
-# start coding!
+```
+
+``` javascript
+import { Form } from '@taojimu/meta-view';
+
+export default function App() {
+  return <Form schema={schema} onChange={onChange} />;
+}
 
 ```
