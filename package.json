@@ -50,7 +50,7 @@
     "prettier": "^2.4.1"
   },
   "dependencies": {
-    "@taojimu/meta-view": "^0.0.6",
+    "@taojimu/meta-view": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }
