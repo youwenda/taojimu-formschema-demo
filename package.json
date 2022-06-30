@@ -40,7 +40,7 @@
     "@babel/eslint-parser": "^7.17.0",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
-    "craco-cli": "^3.0.1-alpha.1",
+    "craco-cli": "^3.0.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
