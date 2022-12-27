@@ -21,229 +21,559 @@
       "webapp": {
         "widget": "TaobaowpCustomForm",
         "properties": {
-          "overviewPic": {
+          "scenes": {
             "type": "object",
-            "properties": {
-              "src": {
-                "type": "string",
-                "title": "图片地址",
-                "format": "uri"
-              },
-              "type": {
-                "type": "string",
-                "title": "图片来源",
-                "const": "library"
-              },
-              "extension": {
-                "type": "string",
-                "title": "图片格式"
-              },
-              "width": {
-                "type": "number",
-                "title": "图片宽度，单位px"
-              },
-              "height": {
-                "type": "number",
-                "title": "图片高度，单位px"
-              }
-            },
-            "required": [
-              "src",
-              "extension",
-              "width",
-              "height"
-            ],
-            "title": "图片选择",
-            "ex-taojimu": {
-              "key": "overviewPic",
-              "type": "image",
-              "required": true,
-              "extension": {
-                "recdimension": "750x0",
-                "recformat": "jpg",
-                "recsize": 0.5,
-                "check": {}
-              }
-            }
-          },
-          "question": {
-            "type": "object",
-            "properties": {
-              "words": {
-                "type": "string",
-                "maxLength": 400
-              },
-              "fontid": {
-                "type": "integer",
-                "const": -1
-              }
-            },
-            "title": "问题",
-            "ex-taojimu": {
-              "key": "question",
-              "type": "textarea",
-              "required": true,
-              "extension": {
-                "maxLength": 400
-              }
-            }
-          },
-          "rightChoice": {
-            "type": "string",
-            "maxLength": 10,
-            "title": "正确答案",
-            "ex-taojimu": {
-              "key": "rightChoice",
-              "type": "text",
-              "required": true,
-              "extension": {
-                "maxLength": 10
-              }
-            }
-          },
-          "errorChoice": {
-            "type": "string",
-            "maxLength": 10,
-            "title": "错误答案",
-            "ex-taojimu": {
-              "key": "errorChoice",
-              "type": "text",
-              "required": true,
-              "extension": {
-                "maxLength": 10
-              }
-            }
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "minItems": 1,
-            "maxItems": 1,
-            "title": "宝贝选择",
-            "ex-taojimu": {
-              "key": "items",
-              "type": "item_change",
-              "required": false,
-              "extension": {
-                "prefetch": true
-              },
-              "min": 1,
-              "max": 1,
-              "api": "goods"
-            }
-          },
-          "itemsPrefetchData": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "auction_id": {
-                  "type": "string",
-                  "title": "宝贝id",
-                  "pattern": "^\\d+$"
+            "anyOf": [
+              {
+                "title": "内容设置",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "default": "content",
+                    "const": "content",
+                    "enum": [
+                      "content"
+                    ]
+                  },
+                  "item": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "title": "宝贝选择"
+                  },
+                  "itemPrefetchData": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "auction_id": {
+                          "type": "string",
+                          "title": "宝贝id",
+                          "pattern": "^\\d+$"
+                        },
+                        "spBiz30day": {
+                          "type": "string",
+                          "title": "月销",
+                          "pattern": "^\\d+$"
+                        },
+                        "totalSold": {
+                          "type": "string",
+                          "title": "总销",
+                          "pattern": "^\\d+$"
+                        },
+                        "preSellType": {
+                          "type": "number",
+                          "title": "定金类型"
+                        },
+                        "itemTitle": {
+                          "type": "string",
+                          "title": "宝贝标题"
+                        },
+                        "promoMBasePrice": {
+                          "type": "string",
+                          "title": "宝贝原价"
+                        },
+                        "pictUrl": {
+                          "type": "string",
+                          "format": "uri",
+                          "title": "宝贝主图"
+                        },
+                        "icQuantityDesc": {
+                          "type": "string",
+                          "title": "库存描述"
+                        },
+                        "preSellPrice": {
+                          "type": "string",
+                          "title": "预售价格"
+                        },
+                        "promoMPrice": {
+                          "type": "string",
+                          "title": "折扣价"
+                        },
+                        "price": {
+                          "type": "string",
+                          "title": "最终价格"
+                        }
+                      },
+                      "required": [
+                        "auction_id",
+                        "pictUrl",
+                        "itemTitle",
+                        "price"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "title": "宝贝选择"
+                  },
+                  "video_unify": {
+                    "type": "object",
+                    "properties": {
+                      "duration": {
+                        "type": "number",
+                        "title": "视频播放时间，单位秒"
+                      },
+                      "url": {
+                        "type": "string",
+                        "title": "视频地址",
+                        "format": "uri"
+                      },
+                      "width": {
+                        "type": "number",
+                        "title": "视频宽度，单位px"
+                      },
+                      "height": {
+                        "type": "number",
+                        "title": "视频高度，单位px"
+                      },
+                      "snapshot": {
+                        "type": "string",
+                        "title": "视频封面",
+                        "format": "uri"
+                      },
+                      "poster": {
+                        "type": "string",
+                        "title": "视频封面",
+                        "format": "uri"
+                      },
+                      "name": {
+                        "type": "string",
+                        "title": "视频名称"
+                      }
+                    },
+                    "required": [
+                      "duration",
+                      "url",
+                      "width",
+                      "height",
+                      "poster",
+                      "name"
+                    ],
+                    "title": "视频选择"
+                  },
+                  "text": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "填写按钮文本"
+                  },
+                  "coupons": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "title": "优惠券选择"
+                  },
+                  "couponsPrefetchData": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "number",
+                          "title": "优惠券面值，单位分"
+                        },
+                        "applyCount": {
+                          "type": "number",
+                          "title": "已领取数量"
+                        },
+                        "applyPlace": {
+                          "type": "string",
+                          "title": "券模板，技术专用"
+                        },
+                        "couponType": {
+                          "type": "number",
+                          "title": "优惠券类型：0 店铺券 1 单品券，如果其他值，显示优惠券即可"
+                        },
+                        "endTime": {
+                          "type": "number"
+                        },
+                        "startTime": {
+                          "type": "number"
+                        },
+                        "instruction": {
+                          "type": "string",
+                          "title": "使用说明"
+                        },
+                        "isExpire": {
+                          "type": "boolean",
+                          "title": "是否过期"
+                        },
+                        "isPublic": {
+                          "type": "boolean",
+                          "title": "是否公开券"
+                        },
+                        "spreadId": {
+                          "type": "number",
+                          "title": "券传播id"
+                        },
+                        "startFee": {
+                          "type": "number",
+                          "title": "使用门槛，单位分，即满减xx元"
+                        },
+                        "status": {
+                          "type": "number",
+                          "title": "券状态"
+                        },
+                        "supplierId": {
+                          "type": "number",
+                          "title": "优惠券提供的商家sellerId"
+                        },
+                        "templateCode": {
+                          "type": "number",
+                          "title": "优惠券id"
+                        },
+                        "title": {
+                          "type": "string",
+                          "title": "优惠券名称"
+                        },
+                        "totalCount": {
+                          "type": "number",
+                          "title": "总发行量"
+                        },
+                        "terminals": {
+                          "type": "number",
+                          "title": "终端类型，领券专用"
+                        },
+                        "couponTag": {
+                          "type": "string",
+                          "title": "渠道券标记"
+                        },
+                        "uuid": {
+                          "type": "string",
+                          "title": "优惠券唯一标识"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "spreadId",
+                        "startFee",
+                        "supplierId",
+                        "templateCode",
+                        "uuid"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "title": "优惠券选择"
+                  },
+                  "livestream": {
+                    "type": "number",
+                    "title": "直播选择"
+                  },
+                  "oright": {
+                    "type": "object",
+                    "properties": {
+                      "poolId": {
+                        "type": "number",
+                        "title": "奖池id"
+                      },
+                      "creatorId": {
+                        "type": "number",
+                        "title": "创建奖池的商家sellerId"
+                      },
+                      "type": {
+                        "type": "string",
+                        "title": "奖池类型： 抽奖：1，发奖：3，也支持字符串类型枚举：抽奖：activity，发奖：right",
+                        "enum": [
+                          "1",
+                          "3",
+                          "activity",
+                          "right"
+                        ]
+                      },
+                      "ename": {
+                        "type": "string",
+                        "title": "奖池ename"
+                      },
+                      "name": {
+                        "type": "string",
+                        "title": "奖池名称"
+                      },
+                      "startTime": {
+                        "type": "string",
+                        "pattern": "^(201[4-9]|202[0-9])-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]) ([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$"
+                      },
+                      "endTime": {
+                        "type": "string",
+                        "pattern": "^(201[4-9]|202[0-9])-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]) ([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$"
+                      },
+                      "status": {
+                        "type": "number",
+                        "title": "奖池状态"
+                      }
+                    },
+                    "title": "权益奖池"
+                  },
+                  "task": {
+                    "type": "object",
+                    "properties": {
+                      "tasks": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "taskContent": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "title": "任务类型",
+                                  "enum": [
+                                    "favorItem",
+                                    "favorShop",
+                                    "addBag",
+                                    "joinMember",
+                                    "share",
+                                    "shareForHelp",
+                                    "appointLive",
+                                    "goShop",
+                                    "goItemDetail",
+                                    "favorDaren",
+                                    "watchVideo",
+                                    "dailyCheckin",
+                                    "favorMiniapp",
+                                    "browsePage",
+                                    "favorLive"
+                                  ]
+                                }
+                              }
+                            },
+                            "dailyLimit": {
+                              "type": "integer",
+                              "title": "每日任务上限"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "title": "设置任务"
+                  }
                 },
-                "spBiz30day": {
-                  "type": "string",
-                  "title": "月销",
-                  "pattern": "^\\d+$"
-                },
-                "totalSold": {
-                  "type": "string",
-                  "title": "总销",
-                  "pattern": "^\\d+$"
-                },
-                "preSellType": {
-                  "type": "number",
-                  "title": "定金类型"
-                },
-                "itemTitle": {
-                  "type": "string",
-                  "title": "宝贝标题"
-                },
-                "promoMBasePrice": {
-                  "type": "string",
-                  "title": "宝贝原价"
-                },
-                "pictUrl": {
-                  "type": "string",
-                  "format": "uri",
-                  "title": "宝贝主图"
-                },
-                "icQuantityDesc": {
-                  "type": "string",
-                  "title": "库存描述"
-                },
-                "preSellPrice": {
-                  "type": "string",
-                  "title": "预售价格"
-                },
-                "promoMPrice": {
-                  "type": "string",
-                  "title": "折扣价"
-                },
-                "price": {
-                  "type": "string",
-                  "title": "最终价格"
-                }
-              },
-              "required": [
-                "auction_id",
-                "pictUrl",
-                "itemTitle",
-                "price"
-              ]
-            },
-            "minItems": 1,
-            "maxItems": 1,
-            "title": "宝贝选择"
-          },
-          "link": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "number"
-              },
-              "type": {
-                "type": "string",
-                "title": "链接类型",
-                "enum": [
-                  "goods",
+                "required": [
+                  "item",
+                  "itemPrefetchData",
                   "coupons",
-                  "input"
+                  "couponsPrefetchData",
+                  "oright",
+                  "task"
                 ]
               },
-              "quicklink": {
-                "type": "string",
-                "title": "快捷类型",
-                "enum": [
-                  "",
-                  "wang",
-                  "home",
-                  "all",
-                  "weitao"
-                ]
-              },
-              "link": {
-                "type": "string",
-                "format": "uri"
+              {
+                "title": "UI设置",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "default": "ui",
+                    "const": "ui",
+                    "enum": [
+                      "ui"
+                    ]
+                  },
+                  "img": {
+                    "type": "object",
+                    "properties": {
+                      "src": {
+                        "type": "string",
+                        "title": "图片地址",
+                        "format": "uri"
+                      },
+                      "type": {
+                        "type": "string",
+                        "title": "图片来源",
+                        "const": "library"
+                      },
+                      "extension": {
+                        "type": "string",
+                        "title": "图片格式"
+                      },
+                      "width": {
+                        "type": "number",
+                        "title": "图片宽度，单位px"
+                      },
+                      "height": {
+                        "type": "number",
+                        "title": "图片高度，单位px"
+                      }
+                    },
+                    "required": [
+                      "src",
+                      "extension",
+                      "width",
+                      "height"
+                    ],
+                    "title": "图片选择"
+                  },
+                  "colorpicker": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "(#([\\da-f]{3}){1,2}|(rgb|hsl)a\\((\\d{1,3}%?,\\s?){3}(1|0?\\.\\d+)\\)|(rgb|hsl)\\(\\d{1,3}%?(,\\s?\\d{1,3}%?){2}\\))"
+                    },
+                    "title": "多颜色选择器"
+                  }
+                }
               }
-            },
-            "title": "跳转链接",
+            ],
+            "title": "小部件场景",
             "ex-taojimu": {
-              "key": "link",
-              "type": "link",
-              "required": true
+              "key": "scenes",
+              "type": "radio_detail",
+              "required": true,
+              "extension": {
+                "type": "tab",
+                "allCheck": true
+              },
+              "options": [
+                {
+                  "name": "内容设置",
+                  "typevalue": "content",
+                  "img": "//gw.alicdn.com/tfs/TB1Neo3iFuWBuNjSszbXXcS7FXa-200-200.png",
+                  "group": 1
+                },
+                {
+                  "name": "UI设置",
+                  "typevalue": "ui",
+                  "img": "//gw.alicdn.com/tfs/TB1pNqeX4SYBuNjSspjXXX73VXa-750-750.jpg",
+                  "group": 2
+                }
+              ],
+              "columns": [
+                {
+                  "title": "宝贝选择",
+                  "min": 1,
+                  "max": 1,
+                  "api": "goods",
+                  "required": true,
+                  "extension": {
+                    "prefetch": true
+                  },
+                  "key": "item",
+                  "type": "item_change",
+                  "group": 1
+                },
+                {
+                  "title": "视频选择",
+                  "extension": {
+                    "recsize": 0.5
+                  },
+                  "key": "video_unify",
+                  "type": "video_unify",
+                  "group": 1
+                },
+                {
+                  "key": "text",
+                  "type": "text",
+                  "title": "填写按钮文本",
+                  "extension": {
+                    "maxLength": 10
+                  },
+                  "group": 1
+                },
+                {
+                  "key": "img",
+                  "type": "image",
+                  "title": "图片选择",
+                  "extension": {
+                    "recdimension": "750x0",
+                    "recformat": "jpg",
+                    "recsize": 0.5
+                  },
+                  "group": 2
+                },
+                {
+                  "title": "多颜色选择器",
+                  "extension": {
+                    "multi": true,
+                    "options": [
+                      "背景色",
+                      "前景色"
+                    ]
+                  },
+                  "key": "colorpicker",
+                  "type": "colorpicker",
+                  "group": 2
+                },
+                {
+                  "title": "优惠券选择",
+                  "min": 1,
+                  "max": 2,
+                  "api": "coupons",
+                  "extension": {
+                    "prefetch": true,
+                    "store": false,
+                    "apiInput": "ids"
+                  },
+                  "required": true,
+                  "key": "coupons",
+                  "type": "item_change",
+                  "group": 1
+                },
+                {
+                  "title": "直播选择",
+                  "type": "livestream",
+                  "key": "livestream",
+                  "group": 1
+                },
+                {
+                  "key": "oright",
+                  "type": "oright",
+                  "required": true,
+                  "title": "权益奖池",
+                  "group": 1
+                },
+                {
+                  "key": "task",
+                  "type": "task",
+                  "title": "设置任务",
+                  "info": "最少1个最多7个",
+                  "required": true,
+                  "extension": {
+                    "scene": "isv",
+                    "tasks": [
+                      "favorShop",
+                      "favorItem",
+                      "addBag",
+                      "joinMember",
+                      "appointLive",
+                      "goShop",
+                      "goItemDetail",
+                      "share",
+                      "favorLive",
+                      "favorMiniapp",
+                      "orderItem"
+                    ],
+                    "config": {
+                      "favorItem": {
+                        "itemMin": 1,
+                        "itemMax": 4
+                      },
+                      "addBag": {
+                        "itemMin": 1,
+                        "itemMax": 4
+                      }
+                    },
+                    "showDailyLimit": true,
+                    "minDailyLimit": 1,
+                    "maxDailyLimit": 50,
+                    "max": 7,
+                    "min": 1
+                  },
+                  "group": 1
+                }
+              ]
             }
           }
         },
         "required": [
-          "overviewPic",
-          "question",
-          "rightChoice",
-          "errorChoice",
-          "link"
+          "scenes"
+        ],
+        "propertiesOrder": [
+          "scenes"
         ]
       }
     }
