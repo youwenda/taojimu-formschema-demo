@@ -5,106 +5,38 @@
       "returnValue": {
         "webapp": {
           "scenes": {
-            "text": "点我啊",
-            "item": [
-              "682525133215"
-            ],
+            "text": "",
+            "item": [],
             "img": {
-              "src": "https://img.alicdn.com/imgextra/i4/2247603103/O1CN01E2vmjU1YnDlryFzTE_!!2247603103-0-alimamacc.jpg",
-              "type": "library",
-              "extension": "jpg",
-              "width": 800,
-              "height": 1200,
               "compress": false,
-              "groupId": 114289183
+              "extension": "jpg",
+              "groupId": 2254,
+              "height": 600,
+              "src": "https://img.alicdn.com/imgextra/i2/2247603103/O1CN01HU9Ia71YnDnQvIzEW_!!2247603103-0-alimamacc.jpg",
+              "type": "library",
+              "width": 1200
             },
             "type": "content",
             "video_unify": {
-              "url": "https://a1.alibabausercontent.com/restore/qr/play/u/undefined/p/2/e/6/t/1/1671518401194/333512798931.mp4",
-              "duration": 16.08,
-              "snapshot": "//alp.alicdn.com/tjm/p/2247603103_4jY3Dpfdecr1.jpeg",
-              "poster": "//alp.alicdn.com/tjm/p/2247603103_4jY3Dpfdecr1.jpeg",
-              "name": "333512798931.mp4",
-              "width": 720,
-              "height": 1280
+              "duration": 10,
+              "height": 960,
+              "name": "390994250744.mp4",
+              "poster": "//alp.alicdn.com/tjm/p/2247603103_X2oVdAJluCCJ.jpeg",
+              "snapshot": "//alp.alicdn.com/tjm/p/2247603103_X2oVdAJluCCJ.jpeg",
+              "type": "library",
+              "url": "https://a1.alibabausercontent.com/restore/qr/play/u/undefined/p/2/e/6/t/1/1670839459273/390994250744.mp4",
+              "width": 720
             },
             "colorpicker": [
               "rgba(193, 55, 55, 1)",
               "rgba(223, 36, 36, 1)"
             ],
-            "itemPrefetchData": [
-              {
-                "auction_id": "682525133215",
-                "totalSold": "0",
-                "pictUrl": "https://gw.alicdn.com/bao/uploaded/i3/2247603103/O1CN01d6WITY1YnDlfAIOTP_!!0-item_pic.jpg",
-                "promoMBasePrice": "13.00",
-                "promoMPrice": "13.00",
-                "price": "13.00",
-                "itemTitle": "测试宝贝 请不要拍123"
-              }
-            ],
-            "coupons": [
-              5559480121,
-              5570640662
-            ],
-            "livestream": 391305256513,
-            "oright": {
-              "poolId": 2587311045,
-              "creatorId": 2247603103,
-              "type": 1,
-              "ename": "10550790040",
-              "name": "直播间红包3天有效",
-              "startTime": "2022-12-12 20:12:00",
-              "endTime": "2022-12-31 00:00:00",
-              "status": 1
-            },
-            "couponsPrefetchData": [
-              {
-                "spreadId": 8702181591,
-                "amount": 55500,
-                "uuid": "5f029d5a04034f93b9af52c8b935506c",
-                "startTime": 1669939200000,
-                "endTime": 1672444800000,
-                "title": "555",
-                "startFee": 555555500,
-                "templateCode": 5559480121,
-                "couponType": 0,
-                "supplierId": 2247603103,
-                "terminals": 0
-              },
-              {
-                "spreadId": 8741493190,
-                "amount": 100,
-                "uuid": "2bfc4205954044799cf09f57874314e7",
-                "startTime": 1670544000000,
-                "endTime": 1672444800000,
-                "title": "111",
-                "startFee": 11111100,
-                "templateCode": 5570640662,
-                "couponType": 0,
-                "supplierId": 2247603103,
-                "terminals": 0
-              }
-            ],
+            "itemPrefetchData": [],
+            "coupons": [],
+            "couponsPrefetchData": [],
+            "oright": {},
             "task": {
               "tasks": [
-                {
-                  "taskContent": {
-                    "type": "favorMiniapp",
-                    "items_goItemDetail": [
-                      "618936290198"
-                    ],
-                    "miniappId": "3000000057060663",
-                    "label": "运动户外 猩潮动",
-                    "items_favor": [],
-                    "items_favorPrefetchData": [],
-                    "items_addbag": [],
-                    "items_addbagPrefetchData": [],
-                    "items_order": [],
-                    "items_orderPrefetchData": []
-                  },
-                  "dailyLimit": 1
-                },
                 {
                   "taskContent": {
                     "type": "favorShop",
@@ -121,24 +53,8 @@
                 {
                   "taskContent": {
                     "type": "addBag",
-                    "items_addbag": [
-                      "618936290198"
-                    ],
-                    "items_addbagPrefetchData": [
-                      {
-                        "auction_id": "618936290198",
-                        "totalSold": "10万 ",
-                        "promoName": "礼遇价",
-                        "itemTitle": "【圣诞礼物】兰蔻极光水乳套装 控油美白混油皮护肤品套装",
-                        "promoMBasePrice": "1550.00",
-                        "isPostFree": "1",
-                        "pictUrl": "https://gw.alicdn.com/bao/uploaded/i4/2360209412/O1CN01Zt0gRJ2JOkZe5tvzq_!!0-item_pic.jpg",
-                        "icQuantity": "201",
-                        "userId": 2360209412,
-                        "promoMPrice": "1550.00",
-                        "price": "1550.00"
-                      }
-                    ],
+                    "items_addbag": [],
+                    "items_addbagPrefetchData": [],
                     "items_favor": [],
                     "items_favorPrefetchData": [],
                     "items_goItemDetail": [],
@@ -161,8 +77,7 @@
                 },
                 {
                   "taskContent": {
-                    "type": "appointLive",
-                    "feedId": 391305256513
+                    "type": "appointLive"
                   },
                   "dailyLimit": 3
                 },
