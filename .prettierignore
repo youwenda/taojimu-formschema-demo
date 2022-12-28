@@ -5,3 +5,4 @@ es
 coverage
 node_modules
 schema.json
+mock.json

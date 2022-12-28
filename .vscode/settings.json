@@ -1,6 +1,13 @@
 {
   "files.exclude": {
-    "**/package-lock.json": true
+    "**/package-lock.json": true,
+    "**/yarn.lock": true
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#eb5424",
+    "titleBar.inactiveBackground": "#eb542499",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799"
   },
   "less.compile": {
     "compress": false,

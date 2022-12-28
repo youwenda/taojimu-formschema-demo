@@ -4,37 +4,106 @@
       "apiName": "getModuleData",
       "returnValue": {
         "webapp": {
-          "question": {
-            "words": "图中的商品有几大特性?"
-          },
-          "errorChoice": "8",
-          "overviewPic": {
-            "src": "https://img.alicdn.com/imgextra/i2/2247603103/O1CN01pwjVAt1YnDk4IuF0G_!!2247603103-0-alimamacc.jpg",
-            "type": "library",
-            "extension": "jpg",
-            "width": 800,
-            "height": 800,
-            "compress": false,
-            "groupId": 114289183
-          },
-          "items": [673202337949],
-          "link": {
-            "type": "input",
-            "link": "https://shop.m.taobao.com/shop/shop_index.htm?shop_id=undefined",
-            "quicklink": "home"
-          },
-          "rightChoice": "7",
-          "itemsPrefetchData": [
-            {
-              "auction_id": 673202337949,
-              "totalSold": 0,
-              "pictUrl": "//img.alicdn.com/imgextra/i2/2/O1CN01MIeBlE1YnDkGl8AWt_!!2-item_pic.png",
-              "promoMBasePrice": "10.00",
-              "promoMPrice": "10.00",
-              "price": "10.00",
-              "itemTitle": "测试爱肉肉2请不要拍"
+          "scenes": {
+            "text": "",
+            "item": [],
+            "img": {
+              "compress": false,
+              "extension": "jpg",
+              "groupId": 2254,
+              "height": 600,
+              "src": "https://img.alicdn.com/imgextra/i2/2247603103/O1CN01HU9Ia71YnDnQvIzEW_!!2247603103-0-alimamacc.jpg",
+              "type": "library",
+              "width": 1200
+            },
+            "type": "content",
+            "video_unify": {
+              "duration": 10,
+              "height": 960,
+              "name": "390994250744.mp4",
+              "poster": "//alp.alicdn.com/tjm/p/2247603103_X2oVdAJluCCJ.jpeg",
+              "snapshot": "//alp.alicdn.com/tjm/p/2247603103_X2oVdAJluCCJ.jpeg",
+              "type": "library",
+              "url": "https://a1.alibabausercontent.com/restore/qr/play/u/undefined/p/2/e/6/t/1/1670839459273/390994250744.mp4",
+              "width": 720
+            },
+            "colorpicker": [
+              "rgba(193, 55, 55, 1)",
+              "rgba(223, 36, 36, 1)"
+            ],
+            "itemPrefetchData": [],
+            "coupons": [],
+            "couponsPrefetchData": [],
+            "oright": {},
+            "task": {
+              "tasks": [
+                {
+                  "taskContent": {
+                    "type": "favorShop",
+                    "items_favor": [],
+                    "items_favorPrefetchData": [],
+                    "items_addbag": [],
+                    "items_addbagPrefetchData": [],
+                    "items_goItemDetail": [],
+                    "items_order": [],
+                    "items_orderPrefetchData": []
+                  },
+                  "dailyLimit": 1
+                },
+                {
+                  "taskContent": {
+                    "type": "addBag",
+                    "items_addbag": [],
+                    "items_addbagPrefetchData": [],
+                    "items_favor": [],
+                    "items_favorPrefetchData": [],
+                    "items_goItemDetail": [],
+                    "items_order": [],
+                    "items_orderPrefetchData": []
+                  },
+                  "dailyLimit": 5
+                },
+                {
+                  "taskContent": {
+                    "type": "joinMember"
+                  },
+                  "dailyLimit": 1
+                },
+                {
+                  "taskContent": {
+                    "type": "goShop"
+                  },
+                  "dailyLimit": 3
+                },
+                {
+                  "taskContent": {
+                    "type": "appointLive"
+                  },
+                  "dailyLimit": 3
+                },
+                {
+                  "taskContent": {
+                    "type": "share"
+                  },
+                  "dailyLimit": 3
+                },
+                {
+                  "taskContent": {
+                    "type": "favorLive",
+                    "items_favor": [],
+                    "items_favorPrefetchData": [],
+                    "items_addbag": [],
+                    "items_addbagPrefetchData": [],
+                    "items_goItemDetail": [],
+                    "items_order": [],
+                    "items_orderPrefetchData": []
+                  },
+                  "dailyLimit": 1
+                }
+              ],
+              "current": 0
             }
-          ]
+          }
         }
       }
     }
